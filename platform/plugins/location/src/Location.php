@@ -146,7 +146,7 @@ class Location
                     ->get($url);
 
                 if ($response->failed()) {
-                    return ['us', 'ca', 'vn'];
+                    return ['us', 'ca', 'vn', 'sy'];
                 }
 
                 return $response->json('tree');
@@ -162,7 +162,7 @@ class Location
                 $availableLocations[] = $tree['path'];
             }
         } catch (Throwable) {
-            $availableLocations = ['us', 'ca', 'vn'];
+            $availableLocations = ['us', 'ca', 'vn', 'sy'];
         }
 
         return $availableLocations;
